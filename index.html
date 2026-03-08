@@ -128,19 +128,25 @@
       box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
     }
 
-    /* ── HERO IMAGE ── */
-    .hero__image {
+    /* ── HERO VIDEO ── */
+    .hero__video {
       margin-top: 64px;
       border-radius: 20px;
       overflow: hidden;
-      aspect-ratio: 16/7;
+      aspect-ratio: 16/9;
       background: linear-gradient(135deg, var(--green-50), var(--green-100));
+      position: relative;
     }
 
-    .hero__image img {
+    .hero__video video {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
+    }
+
+    .hero__image {
+      display: none;
     }
 
     /* ── DIVIDER ── */
@@ -495,10 +501,11 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
 
-      <div class="hero__image">
-        <img src="https://www.komenconsultancy.com/web/image/3395-565419df/Gemini_Generated_Image_kamguokamguokamg.png"
-             alt="Samenwerking illustratie"
-             onerror="this.outerHTML='<div class=\'img-placeholder\'>Illustratie samenwerking</div>'">
+      <div class="hero__video">
+        <video autoplay loop muted playsinline>
+          <source src="hero-video.mp4" type="video/mp4">
+          <img src="hero-samenwerking.jpg" alt="Samenwerking illustratie">
+        </video>
       </div>
     </div>
   </section>
