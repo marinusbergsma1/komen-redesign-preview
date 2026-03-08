@@ -143,12 +143,17 @@
     box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
   }
 
-  /* ── HERO IMAGE ── */
-  /* ── HERO VIDEO ── */
-  .kc-collab .hero__video {
+  /* ── HERO MEDIA (crossfade wrapper) ── */
+  .kc-collab .hero__media {
+    position: relative;
     margin-top: 40px;
     border-radius: 20px;
     overflow: hidden;
+  }
+
+  /* ── HERO VIDEO ── */
+  .kc-collab .hero__video {
+    transition: opacity 1s ease;
   }
 
   .kc-collab .hero__video video {
@@ -157,19 +162,26 @@
     display: block;
   }
 
-  .kc-collab .hero__video--hidden { display: none; }
+  .kc-collab .hero__video--hidden { opacity: 0; }
 
+  /* ── HERO IMAGE ── */
   .kc-collab .hero__image {
-    margin-top: 40px;
-    border-radius: 20px;
-    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: linear-gradient(135deg, var(--green-50), var(--green-100));
+    opacity: 0;
+    transition: opacity 1s ease;
   }
 
-  .kc-collab .hero__image--hidden { display: none; }
+  .kc-collab .hero__image--visible { opacity: 1; }
 
   .kc-collab .hero__image img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 
@@ -538,20 +550,22 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
 
-      <div class="hero__video" id="kcHeroVideo">
-        <video autoplay muted playsinline id="kcHeroVideoEl">
-          <source src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-video.mp4" type="video/mp4">
-        </video>
-      </div>
+      <div class="hero__media">
+        <div class="hero__video" id="kcHeroVideo">
+          <video autoplay muted playsinline id="kcHeroVideoEl">
+            <source src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-video.mp4" type="video/mp4">
+          </video>
+        </div>
 
-      <div class="hero__image hero__image--hidden" id="kcHeroImage">
-        <img src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
+        <div class="hero__image" id="kcHeroImage">
+          <img src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
+        </div>
       </div>
 
       <script>
         document.getElementById('kcHeroVideoEl').addEventListener('ended', function() {
           document.getElementById('kcHeroVideo').classList.add('hero__video--hidden');
-          document.getElementById('kcHeroImage').classList.remove('hero__image--hidden');
+          document.getElementById('kcHeroImage').classList.add('hero__image--visible');
         });
       </script>
     </div>
