@@ -1,0 +1,678 @@
+<!--
+  ╔══════════════════════════════════════════════════════════╗
+  ║  SAMENWERKING PAGINA — ODOO INJECTIE CODE              ║
+  ║                                                          ║
+  ║  INSTRUCTIES:                                            ║
+  ║  1. Upload de afbeeldingen naar Odoo Media:              ║
+  ║     - hero-circular.jpg                                  ║
+  ║     - hero-samenwerking.jpg                              ║
+  ║     - portal-screenshot.png                              ║
+  ║  2. Vervang de /web/image/ paden hieronder               ║
+  ║     met de echte Odoo media URLs                         ║
+  ║  3. Kopieer ALLES hieronder                              ║
+  ║  4. Plak in Odoo Website → HTML Editor                   ║
+  ║                                                          ║
+  ║  Gemaakt door: Marinus Bergsma — Grafisch Vormgeving     ║
+  ╚══════════════════════════════════════════════════════════╝
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  /* ── RESET & SCOPE ── */
+  .kc-collab {
+    all: initial;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .kc-collab *, .kc-collab *::before, .kc-collab *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* ── CSS VARIABLES ── */
+  .kc-collab {
+    --green-50: #EAF8EF;
+    --green-100: #D4F0DC;
+    --green-200: #B5E4C2;
+    --green-400: #8ED299;
+    --green-500: #5EBB7E;
+    --green-600: #5EBB7E;
+    --green-700: #4FA874;
+    --green-800: #2A6B45;
+    --green-900: #1F4D35;
+    --slate-50: #f8fafc;
+    --slate-100: #f1f5f9;
+    --slate-200: #e2e8f0;
+    --slate-400: #94a3b8;
+    --slate-500: #64748b;
+    --slate-600: #475569;
+    --slate-700: #334155;
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --white: #ffffff;
+    color: var(--slate-700);
+    background: var(--white);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    display: block;
+  }
+
+  .kc-collab img { max-width: 100%; height: auto; display: block; }
+  .kc-collab a { text-decoration: none; color: inherit; }
+
+  .kc-collab .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 40px;
+  }
+
+  /* ── HERO ── */
+  .kc-collab .hero {
+    padding: 56px 0 64px;
+    text-align: center;
+  }
+
+  .kc-collab .hero__logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 56px;
+  }
+
+  .kc-collab .hero__logo {
+    height: 72px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .kc-collab .hero__logos-x {
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--slate-300);
+  }
+
+  .kc-collab .hero__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 500;
+    line-height: 1.15;
+    color: var(--slate-900);
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .kc-collab .hero__text {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--slate-500);
+    max-width: 580px;
+    margin: 0 auto 48px;
+  }
+
+  .kc-collab .hero__text strong {
+    color: var(--slate-700);
+    font-weight: 600;
+  }
+
+  .kc-collab .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .kc-collab .btn--primary {
+    padding: 16px 36px;
+    background: var(--green-600);
+    color: var(--white);
+    border-radius: 10px;
+  }
+
+  .kc-collab .btn--primary:hover {
+    background: var(--green-700);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
+  }
+
+  /* ── HERO IMAGE ── */
+  .kc-collab .hero__image {
+    margin-top: 64px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--green-50), var(--green-100));
+  }
+
+  .kc-collab .hero__image img {
+    width: 100%;
+    display: block;
+  }
+
+  /* ── PROCESS ILLUSTRATION ── */
+  .kc-collab .process-illustration {
+    border-radius: 20px;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--green-50), var(--white));
+  }
+
+  .kc-collab .process-illustration img {
+    width: 100%;
+    display: block;
+  }
+
+  /* ── DIVIDER ── */
+  .kc-collab .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--slate-200);
+    margin: 0 auto;
+  }
+
+  /* ── SECTIONS ── */
+  .kc-collab .section {
+    padding: 96px 0;
+  }
+
+  .kc-collab .section--tinted {
+    background: var(--slate-50);
+  }
+
+  .kc-collab .section--dark {
+    background: var(--green-900);
+    color: var(--white);
+  }
+
+  .kc-collab .section--cta {
+    background: linear-gradient(160deg, var(--green-600), var(--green-800));
+    color: var(--white);
+    text-align: center;
+    padding: 80px 0;
+  }
+
+  .kc-collab .section__label {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--green-600);
+    margin-bottom: 16px;
+  }
+
+  .kc-collab .section--dark .section__label { color: var(--green-400); }
+
+  .kc-collab .section__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: var(--slate-900);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .kc-collab .section--dark .section__title,
+  .kc-collab .section--cta .section__title { color: var(--white); }
+
+  .kc-collab .section__subtitle {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--slate-500);
+    max-width: 520px;
+  }
+
+  .kc-collab .section--dark .section__subtitle { color: rgba(255,255,255,0.6); }
+  .kc-collab .section--cta .section__subtitle {
+    color: rgba(255,255,255,0.75);
+    margin: 0 auto 40px;
+    max-width: 460px;
+  }
+
+  .kc-collab .section__header--center {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+
+  .kc-collab .section__header--center .section__subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ── VOORDELEN INTRO ── */
+  .kc-collab .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .kc-collab .check-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .kc-collab .check-list__item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--slate-100);
+    font-size: 15px;
+    color: var(--slate-600);
+  }
+
+  .kc-collab .check-list__item:last-child { border-bottom: none; }
+
+  .kc-collab .check-list__icon {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--green-500);
+  }
+
+  /* ── BENEFIT CARDS ── */
+  .kc-collab .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--slate-100);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-top: 72px;
+  }
+
+  .kc-collab .card {
+    padding: 44px 36px;
+    background: var(--white);
+  }
+
+  .kc-collab .card__number {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green-500);
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+  }
+
+  .kc-collab .card__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--slate-900);
+    margin-bottom: 12px;
+  }
+
+  .kc-collab .card__text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--slate-500);
+  }
+
+  /* ── CHECKLIST (DARK) ── */
+  .kc-collab .checklist-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .kc-collab .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .kc-collab .checklist-item:nth-child(odd) {
+    padding-right: 40px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+
+  .kc-collab .checklist-item:nth-child(even) {
+    padding-left: 40px;
+  }
+
+  .kc-collab .checklist-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    background: var(--green-400);
+    border-radius: 50%;
+  }
+
+  /* ── PORTAL ── */
+  .kc-collab .portal-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .kc-collab .portal-features {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 36px;
+  }
+
+  .kc-collab .portal-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--slate-100);
+  }
+
+  .kc-collab .portal-feature:last-child { border-bottom: none; }
+
+  .kc-collab .portal-feature__icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--green-50);
+    border-radius: 8px;
+    color: var(--green-600);
+  }
+
+  .kc-collab .portal-feature__title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--slate-800);
+    margin-bottom: 2px;
+  }
+
+  .kc-collab .portal-feature__text {
+    font-size: 13px;
+    color: var(--slate-400);
+  }
+
+  .kc-collab .portal-screenshot {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+    border: 1px solid var(--slate-200);
+  }
+
+  .kc-collab .portal-screenshot img { width: 100%; display: block; }
+
+  .kc-collab .portal-screenshot--full {
+    max-width: 100%;
+  }
+
+  /* ── SECURITY ── */
+  .kc-collab .security-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+
+  .kc-collab .security-card__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--slate-900);
+    margin-bottom: 24px;
+  }
+
+  .kc-collab .security-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+  }
+
+  .kc-collab .security-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--slate-500);
+    line-height: 1.6;
+  }
+
+  .kc-collab .security-list__dot {
+    width: 6px;
+    height: 6px;
+    flex-shrink: 0;
+    background: var(--green-400);
+    border-radius: 50%;
+    margin-top: 7px;
+  }
+
+  /* ── CTA ── */
+  .kc-collab .btn--white {
+    padding: 16px 36px;
+    background: var(--white);
+    color: var(--green-700);
+    border-radius: 10px;
+    font-weight: 700;
+  }
+
+  .kc-collab .btn--white:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+  }
+
+  /* ── FOOTER ── */
+  .kc-collab .footer {
+    padding: 40px 0;
+    text-align: center;
+    color: var(--slate-400);
+    font-size: 13px;
+    border-top: 1px solid var(--slate-100);
+  }
+
+  /* ── PLACEHOLDER ── */
+  .kc-collab .img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--green-50), var(--green-100));
+    color: var(--green-600);
+    font-size: 13px;
+    gap: 8px;
+    padding: 40px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .kc-collab .hero__title { font-size: 38px; }
+    .kc-collab .intro-grid, .kc-collab .portal-grid, .kc-collab .security-grid, .kc-collab .checklist-grid { grid-template-columns: 1fr; }
+    .kc-collab .cards-grid { grid-template-columns: 1fr; }
+    .kc-collab .checklist-item:nth-child(odd) { padding-right: 0; border-right: none; }
+    .kc-collab .checklist-item:nth-child(even) { padding-left: 0; }
+  }
+</style>
+
+<div class="kc-collab">
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__logos">
+        <img src="https://www.komenconsultancy.com/web/image/3412-65c533e8/hypotheekshop-seeklogo.webp" alt="De Hypotheekshop" class="hero__logo">
+        <span class="hero__logos-x">&times;</span>
+        <img src="https://www.komenconsultancy.com/web/image/3407-a4b13ab5/Screenshot_2022-02-06_at_17.14.46-removebg-preview.webp" alt="Komen Consultancy" class="hero__logo">
+      </div>
+
+      <h1 class="hero__title">Fiscale zekerheid bij uw woningtransactie</h1>
+
+      <p class="hero__text">
+        Bij de aan- of verkoop van een woning komen fiscale gevolgen kijken die vaak onderschat worden.
+        Daarom werkt <strong>De Hypotheekshop</strong> samen met <strong>Komen Consultancy.</strong>
+      </p>
+
+      <a href="#" class="btn btn--primary">
+        Neem hier product af
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+
+      <div class="hero__image">
+        <!-- UPLOAD hero-circular.jpg naar Odoo media en vervang dit pad -->
+        <img src="/web/image/hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VOORDELEN ── -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <div class="section__label">Voordelen</div>
+          <h2 class="section__title">Wat biedt deze samenwerking?</h2>
+          <p class="section__subtitle">
+            Klanten van De Hypotheekshop worden tijdig gewezen op belangrijke fiscale aspecten bij hun woningtransactie.
+          </p>
+        </div>
+        <div class="check-list">
+          <div class="check-list__item">
+            <svg class="check-list__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Fiscale aandachtspunten bij aan- en verkoop
+          </div>
+          <div class="check-list__item">
+            <svg class="check-list__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Mogelijke voordelen bij aankoop of verkoop
+          </div>
+          <div class="check-list__item">
+            <svg class="check-list__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Correcte verwerking aftrekbare kosten
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card__number">01</div>
+          <h3 class="card__title">Deskundigheid</h3>
+          <p class="card__text">Professionele uitbesteding van jouw aangifte inkomstenbelasting aan een gespecialiseerd team.</p>
+        </div>
+        <div class="card">
+          <div class="card__number">02</div>
+          <h3 class="card__title">Structuur</h3>
+          <p class="card__text">Vaste werkwijze, duidelijke structuur en daarmee heldere verwachtingen.</p>
+        </div>
+        <div class="card">
+          <div class="card__number">03</div>
+          <h3 class="card__title">Eén omgeving</h3>
+          <p class="card__text">Eén centrale, beveiligde omgeving voor communicatie en documenten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RELEVANTE SITUATIES ── -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__header--center">
+        <div class="section__label">Wanneer relevant</div>
+        <h2 class="section__title">Is dit voor mij van toepassing?</h2>
+        <p class="section__subtitle">Fiscale begeleiding is relevant wanneer u zich in een van deze situaties bevindt.</p>
+      </div>
+      <div class="checklist-grid">
+        <div class="checklist-item"><span class="checklist-dot"></span>Aankoop nieuwe woning</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Verkoop eigen woning</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Overwaarde en herinvestering</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Meerdere woningen (box 3)</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Ondernemerschap naast vermogen</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Hypotheekaanpassingen / verbouwingen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ZO WERKT HET (Diamond Illustratie) ── -->
+  <section class="section">
+    <div class="container">
+      <div class="section__header--center">
+        <div class="section__label">Zo werkt het</div>
+        <h2 class="section__title">Eén gestroomlijnd proces</h2>
+        <p class="section__subtitle">Van hypotheekadvies tot belastingaangifte — alles naadloos verbonden via ons samenwerkingsplatform.</p>
+      </div>
+      <div class="process-illustration">
+        <!-- UPLOAD hero-samenwerking.jpg naar Odoo media en vervang dit pad -->
+        <img src="/web/image/hero-samenwerking.jpg" alt="Isometrische illustratie van het samenwerkingsproces — hypotheek, documenten, belasting en afrondingn">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTAL ── -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="section__header--center">
+        <div class="section__label">Werkwijze</div>
+        <h2 class="section__title">Jouw persoonlijke portal</h2>
+        <p class="section__subtitle">Alles overzichtelijk op één plek. Van bestellingen tot communicatie met je team.</p>
+      </div>
+      <div class="portal-screenshot portal-screenshot--full">
+        <!-- UPLOAD portal-screenshot.png naar Odoo media en vervang dit pad -->
+        <img src="/web/image/portal-screenshot.png" alt="Overzicht van jouw persoonlijke portal — My Account met documenten, twee-factor-authenticatie en meer">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VEILIGHEID ── -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="section__header--center">
+        <div class="section__label">Veiligheid & privacy</div>
+        <h2 class="section__title">Uw gegevens in veilige handen</h2>
+      </div>
+      <div class="security-grid">
+        <div>
+          <h3 class="security-card__title">Onze maatregelen</h3>
+          <ul class="security-list">
+            <li><span class="security-list__dot"></span>AVG-conforme inrichting van alle processen</li>
+            <li><span class="security-list__dot"></span>Beveiligde opslag via Odoo-servers binnen de EU</li>
+            <li><span class="security-list__dot"></span>Beperkte dossiertoegang — alleen geautoriseerd personeel</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="security-card__title">Wat wij van u vragen</h3>
+          <ul class="security-list">
+            <li><span class="security-list__dot"></span>Deel uw accountgegevens niet met derden</li>
+            <li><span class="security-list__dot"></span>Ga voorzichtig om met uw wachtwoord</li>
+            <li><span class="security-list__dot"></span>Twee-factor-authenticatie wordt aanbevolen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section--cta">
+    <div class="container">
+      <h2 class="section__title">Klaar om te starten?</h2>
+      <p class="section__subtitle">Creëer uw persoonlijke portal en krijg direct toegang tot al onze diensten.</p>
+      <a href="#" class="btn btn--white">Creëer jouw portal</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 Komen Consultancy. Alle rechten voorbehouden.
+    </div>
+  </footer>
+
+</div>
