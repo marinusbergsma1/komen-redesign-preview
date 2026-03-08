@@ -3,15 +3,11 @@
   ║  SAMENWERKING PAGINA — ODOO INJECTIE CODE              ║
   ║                                                          ║
   ║  INSTRUCTIES:                                            ║
-  ║  1. Upload de afbeeldingen naar Odoo Media:              ║
-  ║     - hero-circular.jpg                                  ║
-  ║     - hero-samenwerking.jpg                              ║
-  ║     - portal-screenshot.png                              ║
-  ║  2. Vervang de /web/image/ paden hieronder               ║
-  ║     met de echte Odoo media URLs                         ║
-  ║  3. Kopieer ALLES hieronder                              ║
-  ║  4. Plak in Odoo Website → HTML Editor                   ║
+  ║  1. Kopieer ALLES hieronder                              ║
+  ║  2. Plak in Odoo Website → HTML Editor                   ║
+  ║  3. Opslaan — klaar!                                     ║
   ║                                                          ║
+  ║  Afbeeldingen worden gehost via GitHub Pages.            ║
   ║  Gemaakt door: Marinus Bergsma — Grafisch Vormgeving     ║
   ╚══════════════════════════════════════════════════════════╝
 -->
@@ -148,6 +144,19 @@
   }
 
   /* ── HERO IMAGE ── */
+  /* ── HERO VIDEO ── */
+  .kc-collab .hero__video {
+    margin-top: 64px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+
+  .kc-collab .hero__video video {
+    width: 110%;
+    margin-left: -5%;
+    display: block;
+  }
+
   .kc-collab .hero__image {
     margin-top: 64px;
     border-radius: 20px;
@@ -525,9 +534,14 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
 
+      <div class="hero__video">
+        <video autoplay muted loop playsinline>
+          <source src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-video.mp4" type="video/mp4">
+        </video>
+      </div>
+
       <div class="hero__image">
-        <!-- UPLOAD hero-circular.jpg naar Odoo media en vervang dit pad -->
-        <img src="/web/image/hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
+        <img src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
       </div>
     </div>
   </section>
@@ -607,8 +621,7 @@
         <p class="section__subtitle">Van hypotheekadvies tot belastingaangifte — alles naadloos verbonden via ons samenwerkingsplatform.</p>
       </div>
       <div class="process-illustration">
-        <!-- UPLOAD hero-samenwerking.jpg naar Odoo media en vervang dit pad -->
-        <img src="/web/image/hero-samenwerking.jpg" alt="Isometrische illustratie van het samenwerkingsproces — hypotheek, documenten, belasting en afrondingn">
+        <img src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-samenwerking.jpg" alt="Isometrische illustratie van het samenwerkingsproces — hypotheek, documenten, belasting en afronding">
       </div>
     </div>
   </section>
@@ -624,8 +637,7 @@
     </div>
     <div style="max-width: 1280px; margin: 0 auto; padding: 0 40px;">
       <div class="portal-screenshot portal-screenshot--full">
-        <!-- UPLOAD portal-screenshot.png naar Odoo media en vervang dit pad -->
-        <img src="/web/image/portal-screenshot.png" alt="Overzicht van jouw persoonlijke portal — My Account met documenten, twee-factor-authenticatie en meer">
+        <img src="https://marinusbergsma1.github.io/komen-redesign-preview/portal-screenshot.png" alt="Overzicht van jouw persoonlijke portal — My Account met documenten, twee-factor-authenticatie en meer">
       </div>
     </div>
   </section>
