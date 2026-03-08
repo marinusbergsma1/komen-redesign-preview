@@ -127,7 +127,7 @@
     font-family: inherit;
     border: none;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .kc-collab .btn--primary {
@@ -153,7 +153,7 @@
 
   /* ── HERO VIDEO ── */
   .kc-collab .hero__video {
-    transition: opacity 1s ease;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .kc-collab .hero__video video {
@@ -173,7 +173,7 @@
     height: 100%;
     background: linear-gradient(135deg, var(--green-50), var(--green-100));
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .kc-collab .hero__image--visible { opacity: 1; }
