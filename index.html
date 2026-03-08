@@ -53,7 +53,7 @@
 
     /* ── HERO ── */
     .hero {
-      padding: 56px 0 64px;
+      padding: 48px 0 40px;
       text-align: center;
     }
 
@@ -62,7 +62,7 @@
       align-items: center;
       justify-content: center;
       gap: 24px;
-      margin-bottom: 56px;
+      margin-bottom: 40px;
     }
 
     .hero__logo {
@@ -95,7 +95,7 @@
       line-height: 1.8;
       color: var(--slate-500);
       max-width: 580px;
-      margin: 0 auto 48px;
+      margin: 0 auto 32px;
     }
 
     .hero__text strong {
@@ -130,7 +130,7 @@
 
     /* ── HERO VIDEO ── */
     .hero__video {
-      margin-top: 64px;
+      margin-top: 40px;
       border-radius: 20px;
       overflow: hidden;
     }
@@ -141,13 +141,17 @@
       display: block;
     }
 
+    .hero__video--hidden { display: none; }
+
     /* ── HERO IMAGE ── */
     .hero__image {
-      margin-top: 64px;
+      margin-top: 40px;
       border-radius: 20px;
       overflow: hidden;
       background: linear-gradient(135deg, var(--green-50), var(--green-100));
     }
+
+    .hero__image--hidden { display: none; }
 
     .hero__image img {
       width: 100%;
@@ -519,15 +523,22 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
 
-      <div class="hero__video">
-        <video autoplay muted loop playsinline>
+      <div class="hero__video" id="heroVideo">
+        <video autoplay muted playsinline id="heroVideoEl">
           <source src="hero-video.mp4" type="video/mp4">
         </video>
       </div>
 
-      <div class="hero__image">
+      <div class="hero__image hero__image--hidden" id="heroImage">
         <img src="hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
       </div>
+
+      <script>
+        document.getElementById('heroVideoEl').addEventListener('ended', function() {
+          document.getElementById('heroVideo').classList.add('hero__video--hidden');
+          document.getElementById('heroImage').classList.remove('hero__image--hidden');
+        });
+      </script>
     </div>
   </section>
 

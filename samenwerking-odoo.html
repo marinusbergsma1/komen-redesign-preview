@@ -68,7 +68,7 @@
 
   /* ── HERO ── */
   .kc-collab .hero {
-    padding: 56px 0 64px;
+    padding: 48px 0 40px;
     text-align: center;
   }
 
@@ -77,7 +77,7 @@
     align-items: center;
     justify-content: center;
     gap: 24px;
-    margin-bottom: 56px;
+    margin-bottom: 40px;
   }
 
   .kc-collab .hero__logo {
@@ -110,7 +110,7 @@
     line-height: 1.8;
     color: var(--slate-500);
     max-width: 580px;
-    margin: 0 auto 48px;
+    margin: 0 auto 32px;
   }
 
   .kc-collab .hero__text strong {
@@ -146,7 +146,7 @@
   /* ── HERO IMAGE ── */
   /* ── HERO VIDEO ── */
   .kc-collab .hero__video {
-    margin-top: 64px;
+    margin-top: 40px;
     border-radius: 20px;
     overflow: hidden;
   }
@@ -157,12 +157,16 @@
     display: block;
   }
 
+  .kc-collab .hero__video--hidden { display: none; }
+
   .kc-collab .hero__image {
-    margin-top: 64px;
+    margin-top: 40px;
     border-radius: 20px;
     overflow: hidden;
     background: linear-gradient(135deg, var(--green-50), var(--green-100));
   }
+
+  .kc-collab .hero__image--hidden { display: none; }
 
   .kc-collab .hero__image img {
     width: 100%;
@@ -534,15 +538,22 @@
         <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
       </a>
 
-      <div class="hero__video">
-        <video autoplay muted loop playsinline>
+      <div class="hero__video" id="kcHeroVideo">
+        <video autoplay muted playsinline id="kcHeroVideoEl">
           <source src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-video.mp4" type="video/mp4">
         </video>
       </div>
 
-      <div class="hero__image">
+      <div class="hero__image hero__image--hidden" id="kcHeroImage">
         <img src="https://marinusbergsma1.github.io/komen-redesign-preview/hero-circular.jpg" alt="Samenwerkingsproces tussen De Hypotheekshop en Komen Consultancy — circulair diagram">
       </div>
+
+      <script>
+        document.getElementById('kcHeroVideoEl').addEventListener('ended', function() {
+          document.getElementById('kcHeroVideo').classList.add('hero__video--hidden');
+          document.getElementById('kcHeroImage').classList.remove('hero__image--hidden');
+        });
+      </script>
     </div>
   </section>
 
