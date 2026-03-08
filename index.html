@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samenwerking — De Hypotheekshop × Komen Consultancy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --green-50: #EAF8EF;
+      --green-100: #D4F0DC;
+      --green-200: #B5E4C2;
+      --green-400: #8ED299;
+      --green-500: #5EBB7E;
+      --green-600: #5EBB7E;
+      --green-700: #4FA874;
+      --green-800: #2A6B45;
+      --green-900: #1F4D35;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      color: var(--slate-700);
+      background: var(--white);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 0 100px;
+      text-align: center;
+    }
+
+    .hero__logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+
+    .hero__logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hero__logos-x {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--slate-300);
+    }
+
+    .hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 52px;
+      font-weight: 500;
+      line-height: 1.15;
+      color: var(--slate-900);
+      margin-bottom: 28px;
+      letter-spacing: -0.02em;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero__text {
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--slate-500);
+      max-width: 580px;
+      margin: 0 auto 48px;
+    }
+
+    .hero__text strong {
+      color: var(--slate-700);
+      font-weight: 600;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: inherit;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn--primary {
+      padding: 16px 36px;
+      background: var(--green-600);
+      color: var(--white);
+      border-radius: 10px;
+    }
+
+    .btn--primary:hover {
+      background: var(--green-700);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(22, 163, 74, 0.25);
+    }
+
+    /* ── HERO IMAGE ── */
+    .hero__image {
+      margin-top: 64px;
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 16/7;
+      background: linear-gradient(135deg, var(--green-50), var(--green-100));
+    }
+
+    .hero__image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--slate-200);
+      margin: 0 auto;
+    }
+
+    /* ── SECTIONS ── */
+    .section {
+      padding: 96px 0;
+    }
+
+    .section--tinted {
+      background: var(--slate-50);
+    }
+
+    .section--dark {
+      background: var(--green-900);
+      color: var(--white);
+    }
+
+    .section--cta {
+      background: linear-gradient(160deg, var(--green-600), var(--green-800));
+      color: var(--white);
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .section__label {
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--green-600);
+      margin-bottom: 16px;
+    }
+
+    .section--dark .section__label { color: var(--green-400); }
+
+    .section__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 500;
+      line-height: 1.2;
+      color: var(--slate-900);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .section--dark .section__title,
+    .section--cta .section__title { color: var(--white); }
+
+    .section__subtitle {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--slate-500);
+      max-width: 520px;
+    }
+
+    .section--dark .section__subtitle { color: rgba(255,255,255,0.6); }
+    .section--cta .section__subtitle {
+      color: rgba(255,255,255,0.75);
+      margin: 0 auto 40px;
+      max-width: 460px;
+    }
+
+    .section__header--center {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .section__header--center .section__subtitle {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ── VOORDELEN INTRO ── */
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .check-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .check-list__item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--slate-100);
+      font-size: 15px;
+      color: var(--slate-600);
+    }
+
+    .check-list__item:last-child { border-bottom: none; }
+
+    .check-list__icon {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--green-500);
+    }
+
+    /* ── BENEFIT CARDS ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--slate-100);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 72px;
+    }
+
+    .card {
+      padding: 44px 36px;
+      background: var(--white);
+    }
+
+    .card__number {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--green-500);
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .card__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--slate-900);
+      margin-bottom: 12px;
+    }
+
+    .card__text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--slate-500);
+    }
+
+    /* ── CHECKLIST (DARK) ── */
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 15px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .checklist-item:nth-child(odd) {
+      padding-right: 40px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .checklist-item:nth-child(even) {
+      padding-left: 40px;
+    }
+
+    .checklist-dot {
+      width: 8px;
+      height: 8px;
+      flex-shrink: 0;
+      background: var(--green-400);
+      border-radius: 50%;
+    }
+
+    /* ── PORTAL ── */
+    .portal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .portal-features {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 36px;
+    }
+
+    .portal-feature {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--slate-100);
+    }
+
+    .portal-feature:last-child { border-bottom: none; }
+
+    .portal-feature__icon {
+      width: 36px;
+      height: 36px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--green-50);
+      border-radius: 8px;
+      color: var(--green-600);
+    }
+
+    .portal-feature__title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--slate-800);
+      margin-bottom: 2px;
+    }
+
+    .portal-feature__text {
+      font-size: 13px;
+      color: var(--slate-400);
+    }
+
+    .portal-screenshot {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+      border: 1px solid var(--slate-200);
+    }
+
+    .portal-screenshot img { width: 100%; display: block; }
+
+    /* ── SECURITY ── */
+    .security-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+    }
+
+    .security-card__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--slate-900);
+      margin-bottom: 24px;
+    }
+
+    .security-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      list-style: none;
+    }
+
+    .security-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 14px;
+      color: var(--slate-500);
+      line-height: 1.6;
+    }
+
+    .security-list__dot {
+      width: 6px;
+      height: 6px;
+      flex-shrink: 0;
+      background: var(--green-400);
+      border-radius: 50%;
+      margin-top: 7px;
+    }
+
+    /* ── CTA ── */
+    .btn--white {
+      padding: 16px 36px;
+      background: var(--white);
+      color: var(--green-700);
+      border-radius: 10px;
+      font-weight: 700;
+    }
+
+    .btn--white:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      color: var(--slate-400);
+      font-size: 13px;
+      border-top: 1px solid var(--slate-100);
+    }
+
+    /* ── PLACEHOLDER ── */
+    .img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--green-50), var(--green-100));
+      color: var(--green-600);
+      font-size: 13px;
+      gap: 8px;
+      padding: 40px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero__title { font-size: 38px; }
+      .intro-grid, .portal-grid, .security-grid, .checklist-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .checklist-item:nth-child(odd) { padding-right: 0; border-right: none; }
+      .checklist-item:nth-child(even) { padding-left: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero__logos">
+        <img src="https://www.komenconsultancy.com/web/image/3412-65c533e8/hypotheekshop-seeklogo.webp" alt="De Hypotheekshop" class="hero__logo">
+        <span class="hero__logos-x">&times;</span>
+        <img src="https://www.komenconsultancy.com/web/image/3407-a4b13ab5/Screenshot_2022-02-06_at_17.14.46-removebg-preview.webp" alt="Komen Consultancy" class="hero__logo">
+      </div>
+
+      <h1 class="hero__title">Fiscale zekerheid bij uw woningtransactie</h1>
+
+      <p class="hero__text">
+        Bij de aan- of verkoop van een woning komen fiscale gevolgen kijken die vaak onderschat worden.
+        Daarom werkt <strong>De Hypotheekshop</strong> samen met <strong>Komen Consultancy.</strong>
+      </p>
+
+      <a href="#" class="btn btn--primary">
+        Neem hier product af
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5-5-5-5"/></svg>
+      </a>
+
+      <div class="hero__image">
+        <img src="https://www.komenconsultancy.com/web/image/3395-565419df/Gemini_Generated_Image_kamguokamguokamg.png"
+             alt="Samenwerking illustratie"
+             onerror="this.outerHTML='<div class=\'img-placeholder\'>Illustratie samenwerking</div>'">
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VOORDELEN ── -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="intro-grid">
+        <div>
+          <div class="section__label">Voordelen</div>
+          <h2 class="section__title">Wat biedt deze samenwerking?</h2>
+          <p class="section__subtitle">
+            Klanten van De Hypotheekshop worden tijdig gewezen op belangrijke fiscale aspecten bij hun woningtransactie.
+          </p>
+        </div>
+        <div class="check-list">
+          <div class="check-list__item">
+            <svg class="check-list__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Fiscale aandachtspunten bij aan- en verkoop
+          </div>
+          <div class="check-list__item">
+            <svg class="check-list__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Mogelijke voordelen bij aankoop of verkoop
+          </div>
+          <div class="check-list__item">
+            <svg class="check-list__icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 4L12 14.01l-3-3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Correcte verwerking aftrekbare kosten
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card__number">01</div>
+          <h3 class="card__title">Deskundigheid</h3>
+          <p class="card__text">Professionele uitbesteding van jouw aangifte inkomstenbelasting aan een gespecialiseerd team.</p>
+        </div>
+        <div class="card">
+          <div class="card__number">02</div>
+          <h3 class="card__title">Structuur</h3>
+          <p class="card__text">Vaste werkwijze, duidelijke structuur en daarmee heldere verwachtingen.</p>
+        </div>
+        <div class="card">
+          <div class="card__number">03</div>
+          <h3 class="card__title">Eén omgeving</h3>
+          <p class="card__text">Eén centrale, beveiligde omgeving voor communicatie en documenten.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RELEVANTE SITUATIES ── -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section__header--center">
+        <div class="section__label">Wanneer relevant</div>
+        <h2 class="section__title">Is dit voor mij van toepassing?</h2>
+        <p class="section__subtitle">Fiscale begeleiding is relevant wanneer u zich in een van deze situaties bevindt.</p>
+      </div>
+      <div class="checklist-grid">
+        <div class="checklist-item"><span class="checklist-dot"></span>Aankoop nieuwe woning</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Verkoop eigen woning</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Overwaarde en herinvestering</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Meerdere woningen (box 3)</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Ondernemerschap naast vermogen</div>
+        <div class="checklist-item"><span class="checklist-dot"></span>Hypotheekaanpassingen / verbouwingen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PORTAL ── -->
+  <section class="section">
+    <div class="container">
+      <div class="portal-grid">
+        <div>
+          <div class="section__label">Werkwijze</div>
+          <h2 class="section__title">Jouw persoonlijke portal</h2>
+          <p class="section__subtitle">Alles overzichtelijk op één plek. Van bestellingen tot communicatie met je team.</p>
+          <div class="portal-features">
+            <div class="portal-feature">
+              <div class="portal-feature__icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/></svg>
+              </div>
+              <div>
+                <div class="portal-feature__title">Bestellingen & diensten</div>
+                <div class="portal-feature__text">Overzicht van al jouw afgenomen producten.</div>
+              </div>
+            </div>
+            <div class="portal-feature">
+              <div class="portal-feature__icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div>
+                <div class="portal-feature__title">Dossierstatus</div>
+                <div class="portal-feature__text">Volg de voortgang van je dossier in real-time.</div>
+              </div>
+            </div>
+            <div class="portal-feature">
+              <div class="portal-feature__icon">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+              </div>
+              <div>
+                <div class="portal-feature__title">Documenten & communicatie</div>
+                <div class="portal-feature__text">Upload en communiceer direct met je team.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="portal-screenshot">
+          <img src="https://www.komenconsultancy.com/web/image/3394-b8d32eba/Screenshot%202026-02-05%20at%2023.09.03.png"
+               alt="Portal screenshot"
+               onerror="this.outerHTML='<div class=\'img-placeholder\' style=\'aspect-ratio:16/10;\'>Portal screenshot</div>'">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── VEILIGHEID ── -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="section__header--center">
+        <div class="section__label">Veiligheid & privacy</div>
+        <h2 class="section__title">Uw gegevens in veilige handen</h2>
+      </div>
+      <div class="security-grid">
+        <div>
+          <h3 class="security-card__title">Onze maatregelen</h3>
+          <ul class="security-list">
+            <li><span class="security-list__dot"></span>AVG-conforme inrichting van alle processen</li>
+            <li><span class="security-list__dot"></span>Beveiligde opslag via Odoo-servers binnen de EU</li>
+            <li><span class="security-list__dot"></span>Beperkte dossiertoegang — alleen geautoriseerd personeel</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="security-card__title">Wat wij van u vragen</h3>
+          <ul class="security-list">
+            <li><span class="security-list__dot"></span>Deel uw accountgegevens niet met derden</li>
+            <li><span class="security-list__dot"></span>Ga voorzichtig om met uw wachtwoord</li>
+            <li><span class="security-list__dot"></span>Twee-factor-authenticatie wordt aanbevolen</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section--cta">
+    <div class="container">
+      <h2 class="section__title">Klaar om te starten?</h2>
+      <p class="section__subtitle">Creëer uw persoonlijke portal en krijg direct toegang tot al onze diensten.</p>
+      <a href="#" class="btn btn--white">Creëer jouw portal</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 Komen Consultancy. Alle rechten voorbehouden.
+    </div>
+  </footer>
+
+</body>
+</html>
